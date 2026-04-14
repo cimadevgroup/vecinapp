@@ -1,0 +1,46 @@
+/* theme.css - definición de temas intercambiables */
+/* Tema claro (por defecto) */
+body[data-theme="light"] {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Tema oscuro */
+body[data-theme="dark"] {
+  background: #111827;
+  color: #f9fafb;
+}
+body[data-theme="dark"] .dock {
+  background: rgba(17, 24, 39, 0.8);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+body[data-theme="dark"] .card {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body[data-theme="dark"] .message-input {
+  background: rgba(31, 41, 55, 0.7);
+}
+
+/* Tema Liquid Glass (cristal esmerilado con gradiente) */
+body[data-theme="liquid"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+body[data-theme="liquid"] .dock {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+body[data-theme="liquid"] .card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+body[data-theme="liquid"] .message {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+body[data-theme="liquid"] .message.own {
+  background: rgba(59, 130, 246, 0.5);
+}

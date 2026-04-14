@@ -1,0 +1,21 @@
+vecinapp/
+├── index.html
+├── admin.html
+├── superadmin.html
+├── app/
+│   ├── style/
+│   │   ├── style.css
+│   │   └── theme.css
+│   ├── system/
+│   │   ├── router.js
+│   │   ├── home.js
+│   │   ├── comunity.js
+│   │   ├── profile.js
+│   │   ├── dock.js
+│   │   ├── api.js
+│   │   └── websocket.js
+│   ├── worker.js
+│   ├── tools/
+│   │   └── build.js
+│   └── assets/
+│       └── (imágenes, iconos, etc.)
