@@ -1,20 +1,13 @@
-// api.js - Funciones para manejar token y usuario actual
-export function getCurrentUser() {
-  const str = localStorage.getItem('user');
-  return str ? JSON.parse(str) : null;
-}
+// api.js - Configuración de endpoints
+// Cambia esta URL por la de tu Worker de Cloudflare cuando esté desplegado
+export const API_BASE = 'https://tu-worker.workers.dev'; // ← pon tu URL real
 
-export function isAuthenticated() {
-  return !!localStorage.getItem('token');
-}
-
-export function setAuth(token, user) {
-  localStorage.setItem('token', token);
-  localStorage.setItem('user', JSON.stringify(user));
-}
-
-export function logout() {
-  localStorage.removeItem('token');
-  localStorage.removeItem('user');
-  window.location.href = '/login';
+export function getCurrentUser() { ... }
+export async function fetchAPI(endpoint, options = {}) {
+  const token = localStorage.getItem('token');
+  const res = await fetch(`${API_BASE}${endpoint}`, {
+    ...options,
+    headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...options.headers }
+  });
+  return res.json();
 }
